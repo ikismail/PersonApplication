@@ -1,0 +1,113 @@
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+    .swiper-container .swiper-wrapper h1, .swiper-container .swiper-wrapper h1.subttl {
+        font-size: 20px !important;
+        line-height: 20px !important;
+    }
+
+    .swiper-container .swiper-wrapper h1 {
+        margin-left: 0;
+    }
+
+    .swiper-container .swiper-wrapper p {
+        font-size: 14px;
+    }
+
+    .swiper-container .swiper-wrapper .copy {
+        padding-left: 20px;
+        float: left;
+        width: 64% !important;
+    }
+
+    .banner_btn {
+        font-size: 0.6em;
+        margin-bottom: 5px;
+        padding: 4px 20px !important;
+    }
+
+    .swiper-container .swiper-slide img {
+        width: 125%;
+    }
+
+    section .left .ralign img, section .left .lalign img, section .right .lalign img, section .right .ralign img {
+        width: 100px;
+    }
+
+    .navis {
+        width: 100%;
+        background: #fff;
+    }
+
+    .swiper-container .swiper-slide {
+        background-position: 56% center;
+    }
+
+    .navis {
+        height: auto;
+    }
+
+    .mob_pinned {
+        position: fixed;
+        height: 50px;
+        background: #fff;
+        z-index: 10;
+        box-shadow: 3px 3px 5px #ccc;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+
+    .swiper-container.mob {
+        margin-top: 50px !important;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 805px) {
+    .swiper-container .swiper-wrapper h1, .swiper-container .swiper-wrapper h1.subttl {
+        font-size: 22px !important;
+        line-height: 22px !important;
+        margin: 0 0 10px 0 !important;
+    }
+
+    .swiper-container .swiper-wrapper .copy {
+        padding-left: 30px;
+        width: 70% !important;
+        float: left;
+    }
+
+    .logo img {
+        margin-left: 20px;
+    }
+
+    .swiper-container .swiper-slide img {
+        width: 125%;
+    }
+
+    .banner_btn {
+        padding: 5px 10px !important;
+        font-size: 12px !important;
+    }
+
+    section .left .ralign img, section .left .lalign img, section .right .lalign img, section .right .ralign img {
+        width: 150px;
+    }
+}
+
+@media only screen and (min-width: 806px) and (max-width: 1200px) {
+    .swiper-container .swiper-wrapper .copy {
+        padding-left: 15px;
+        width: 70% !important;
+        float: left;
+    }
+
+    .swiper-container .swiper-wrapper h1, .swiper-container .swiper-wrapper h1.subttl {
+        font-size: 28px !important;
+        line-height: 28px !important;
+    }
+
+    .swiper-container .swiper-wrapper p {
+        font-size: 17px;
+    }
+
+    .logo img {
+        margin-left: 20px;
+    }
+}

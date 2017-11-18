@@ -1,0 +1,136 @@
+swagger: '2.0'
+info:
+  description: This is simple application for person
+  version: 1.0.0
+  title: Person Application
+  contact:
+    email: ikismail7@gmail.com
+host: 'localhost:8081'
+basePath: /webApi
+tags:
+  - name: person
+    description: Everything about your Persons
+schemes:
+  - http
+paths:
+  /persons:
+    post:
+      tags:
+        - person
+      summary: Add a new person to the store
+      description: ''
+      operationId: addPerson
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Person object that needs to be added to the store
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        '405':
+          description: Invalid input
+    get:
+      tags:
+        - person
+      summary: Finds Persons
+      description: return all Persons
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+        '400':
+          description: Invalid status value
+  '/persons/{personId}':
+    delete:
+      tags:
+        - person
+      summary: Deletes a person
+      description: ''
+      operationId: deletePerson
+      produces:
+        - application/json
+      parameters:
+        - name: personId
+          in: path
+          description: Person id to delete
+          required: true
+          type: string
+      responses:
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Person not found
+    get:
+      tags:
+        - person
+      summary: Find person by ID
+      description: Returns a single person
+      operationId: getPersonById
+      produces:
+        - application/json
+      parameters:
+        - name: personId
+          in: path
+          description: ID of person to return
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/User'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Person not found
+    put:
+      tags:
+        - person
+      summary: Update person
+      description: Update person
+      operationId: updated person
+      produces:
+        - application/json
+      parameters:
+        - name: personId
+          in: path
+          description: id that need to be updated
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Updated person object
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        '400':
+          description: Invalid user supplied
+        '404':
+          description: User not found
+definitions:
+  User:
+    type: object
+    properties:
+      personId:
+        type: string
+      personName:
+        type: string
+      personEmail:
+        type: string
+      personAge:
+        type: integer
+        format: int64
+externalDocs:
+  description: Find out more about Swagger
+  url: 'http://swagger.io'

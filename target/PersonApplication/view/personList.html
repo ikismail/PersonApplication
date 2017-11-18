@@ -1,0 +1,204 @@
+<ol class="breadcrumb z-depth-2 blue-gradient" style="margin-bottom: 0">
+    <li class="breadcrumb-item"><a href="#/" style="color: white">Home</a></li>
+</ol>
+
+<div class="swiper-container" style="height: 230px">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide center "
+             style="background-image:url('../img/Analytics_LP_SchwerinHasse_Tile_v4.jpg'); background-repeat: no-repeat; background-color: #fff;">
+            <div class="copy">
+                <h2>Simple Person Operation</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="swiper-container" style="height: 230px">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide center">
+            <div class="copy">
+
+                <div class="md-form col-3">
+                    <input type="text" id="form1" class="form-control" data-ng-model="search">
+                    <label for="form1" class="">Search Person</label>
+                </div>
+
+                <div class="row">
+
+                    <!-- Card 1 -->
+                    <div class="md-form col-3 mt" data-ng-repeat="person in persons | filter:search">
+                        <!--Card-->
+                        <div class="card testimonial-card hoverable">
+
+                            <!--Bacground color-->
+                            <div class="card-up blue-gradient">
+                                <i class="fa fa-times" aria-hidden="true"
+                                   style="float: right;margin-right: 15px;margin-top: 11px;color: white;cursor:pointer;"
+                                   data-ng-click="deletePerson(person.personId)"></i>
+                            </div>
+
+                            <!--Avatar-->
+                            <div class="avatar"><img src="../img/avatar.jpg" class="rounded-circle" style="cursor:pointer">
+                            </div>
+
+                            <div class="card-body">
+                                <!--Name-->
+                                <h4 class="card-title">{{person.personName}}</h4>
+                                <hr>
+                                <!--Quotation-->
+                                <h5><i class="fa fa-envelope mr-2"></i> {{person.personEmail}}</h5>
+                                <h6><i class="fa fa-birthday-cake mr-2"></i> {{person.personAge}}</h6>
+                                <a href="" data-toggle="modal" data-target="#updatePersonModal"
+                                   class="banner_btn" target="_self" data-ng-click="updateLog(person)">Update Person</a>
+                            </div>
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="md-form col-3 mt">
+                        <!--Card-->
+                        <div class="card testimonial-card hoverable" style="height:379px; cursor:pointer">
+
+                            <!--Bacground color-->
+                            <div class="card-up blue-gradient" style="background-color:#0899cc;">
+                            </div>
+
+                            <!--Avatar-->
+                            <div class="avatar"><img src="../img/avatar.jpg" class="rounded-circle">
+                            </div>
+
+                            <div class="card-body">
+                                <!--Name-->
+                                <!-- Button trigger modal -->
+                                <a href="" data-toggle="modal" data-target="#addPersonModal"
+                                   class="banner_btn" target="_self">Add Person</a>
+
+
+                            </div>
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- AddPerson Modal -->
+<!--Modal: Register Form-->
+<div class="modal fade" id="addPersonModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Header-->
+            <div class="modal-header light-blue darken-3 white-text">
+                <h4 class="title"><i class="fa fa-user-plus"></i> Add Person</h4>
+                <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+                <div class="md-form form-sm">
+                    <i class="fa fa-user prefix"></i>
+                    <input type="text" id="addName" class="form-control" data-ng-model="person.personName">
+                    <label for="addName">Your name</label>
+                </div>
+
+                <div class="md-form form-sm">
+                    <i class="fa fa-envelope prefix"></i>
+                    <input type="text" id="addEmail" class="form-control" data-ng-model="person.personEmail">
+                    <label for="addEmail">Your email</label>
+                </div>
+
+                <div class="md-form form-sm">
+                    <i class="fa fa-birthday-cake prefix"></i>
+                    <input type="text" id="addAge" class="form-control" data-ng-model="person.personAge">
+                    <label for="addAge">Your age</label>
+                </div>
+
+                <div class="text-center mt-2">
+                    <button class="btn btn-info" data-ng-click="createPerson()">Register
+                        <i class="fa fa-sign-in ml-1"></i></button>
+                </div>
+
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-info waves-effect ml-auto"
+                        data-dismiss="modal">Close
+                </button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!--Modal: Register Form-->
+
+<!-- UpdatePerson Modal -->
+<!--Modal: Register Form-->
+<div class="modal fade" id="updatePersonModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Header-->
+            <div class="modal-header light-blue darken-3 white-text">
+                <h4 class="title"><i class="fa fa-user-plus"></i> Update Person</h4>
+                <button type="button" class="close waves-effect waves-light"
+                        data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+                <div class="md-form form-sm">
+                    <i class="fa fa-user prefix active"></i>
+                    <input type="text" id="updateName" class="form-control" data-ng-model="personUpdate.personName">
+                    <label for="updateName" class="active">Your name</label>
+                </div>
+
+                <div class="md-form form-sm">
+                    <i class="fa fa-envelope prefix active"></i>
+                    <input type="text" id="updateEmail" class="form-control" data-ng-model="personUpdate.personEmail">
+                    <label for="updateEmail" class="active">Your email</label>
+                </div>
+
+                <div class="md-form form-sm">
+                    <i class="fa fa-birthday-cake prefix active"></i>
+                    <input type="text" id="updateAge" class="form-control" data-ng-model="personUpdate.personAge">
+                    <label for="updateAge" class="active">Your age</label>
+                </div>
+
+                <div class="text-center mt-2">
+                    <button class="btn btn-info" data-ng-click="updatePersonDetails()">Update
+                        <i class="fa fa-sign-in ml-1"></i></button>
+                </div>
+
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-info waves-effect ml-auto"
+                        data-dismiss="modal">Close
+                </button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!--Modal: Register Form-->
+
+<script type="text/javascript">
+    // popovers Initialization
+    $('.popoverData').popover();
+    $('#popoverOption').popover({trigger: "hover"});
+
+</script>

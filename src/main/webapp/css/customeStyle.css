@@ -1,0 +1,32 @@
+
+
+.swiper-container .swiper-slide{
+	min-height: 286px;
+}
+
+.swiper-container{
+	background-color: #fff;
+}
+
+#chartdiv {
+    width: 100%;
+    height: 178px;
+    margin-top: 320px;
+}
+.bg-skin-lp {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.table{
+  width:100%;
+  max-width: none;
+}
+
+.md-form.form-sm input {
+    padding-bottom: .2rem;
+    padding-top: .2rem;
+    line-height: .5;
+}
